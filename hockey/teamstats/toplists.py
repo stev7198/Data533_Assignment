@@ -6,7 +6,9 @@
 import pandas as pd
 import pkg_resources
 
+
 def TopTeams():
+    #allows the user to choose an NHL season, and show the top scoring teams from that year
     year = input("Enter the season you would like data for: Please just enter the year the season finished (e.g., 2021/2022 enter 2022)")
 
     csv_filename = f"Team{year}.csv"
@@ -22,6 +24,7 @@ def TopTeams():
     return top_teams
 
 def TopAssists():
+    #allows the user to choose an NHL season, and show the players with most assists from that year
     year = input("Enter the season you would like data for: Please just enter the year the season finished (e.g., 2021/2022 enter 2022)")
 
     csv_filename = f"skaters{year}.csv"
@@ -42,6 +45,7 @@ def TopAssists():
     return top_players
 
 def TopGoals():
+    #allows the user to choose an NHL season, and displays the players with the most goals from that year. 
     year = input("Enter the season you would like data for: Please just enter the year the season finished (e.g., 2021/2022 enter 2022)")
 
     csv_filename = f"skaters{year}.csv"

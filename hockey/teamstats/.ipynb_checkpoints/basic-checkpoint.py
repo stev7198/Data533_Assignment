@@ -7,7 +7,9 @@
 import pandas as pd
 import pkg_resources
 
+
 def LoadData():
+    #loads the correct dataset depending on chosen year
     year = input("Enter the season you would like data for: Please just enter the year the season finished (e.g., 2021/2022 enter 2022)")
 
     csv_filename = f"Team{year}.csv"
@@ -22,6 +24,7 @@ def LoadData():
     
 
 def BasicStats():
+    #displays specific basic stats for the chosen NHL team, depending on user input
     df = LoadData()
     team = input("Enter the team name: ")
     stat = input("Enter the stat/column you want (RK, GP, W, L, OT, PTS, PTS/GP, ROW, GF, GA, GD: ")
@@ -38,7 +41,9 @@ def BasicStats():
             stat_value = team_data.iloc[0][stat]
             return stat_value
 
+
 def AdvancedStats():
+    #displays advanced stats for the chosen team, depending on user input
     df = LoadData()
 
     team = input("Enter the team name: ")

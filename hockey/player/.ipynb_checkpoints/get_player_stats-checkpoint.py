@@ -4,7 +4,7 @@ from .goalie import Goalie
 def get_player_stats():
     
     while True:
-        year = input("Enter the year (2020, 2021, 2022, 2023, 2024): ")
+        year = input("Enter the year to search NHL stats (2020, 2021, 2022, 2023, 2024): ")
         if year in ['2020', '2021', '2022', '2023', '2024']:
             year = int(year)
             break

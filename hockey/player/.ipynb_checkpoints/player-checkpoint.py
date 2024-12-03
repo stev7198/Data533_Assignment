@@ -17,7 +17,7 @@ class Player:
             print(f"Error: There was a problem decoding the file {filename}. Please check the file's encoding.")
  
     def _get_player_data(self, player_name):
-        """Helper function to filter player data"""
+        
         if self.data is None:
             return None
         
