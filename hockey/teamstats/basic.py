@@ -9,7 +9,7 @@ import pkg_resources
 
 
 def LoadData():
-    #loads the correct dataset depending on chosen year
+    """loads the correct dataset depending on chosen year"""
     year = input("Enter the season you would like data for: Please just enter the year the season finished (e.g., 2021/2022 enter 2022)")
 
     csv_filename = f"Team{year}.csv"
@@ -24,8 +24,8 @@ def LoadData():
     
 
 def BasicStats():
-    #displays specific basic stats for the chosen NHL team, depending on user input
-    df = LoadData()
+    """displays specific basic stats for the chosen NHL team, depending on user input"""
+    df = LoadData() # calls the loadData function to get the correct year and dataframe
     team = input("Enter the team name: ")
     stat = input("Enter the stat/column you want (RK, GP, W, L, OT, PTS, PTS/GP, ROW, GF, GA, GD: ")
 
@@ -43,8 +43,8 @@ def BasicStats():
 
 
 def AdvancedStats():
-    #displays advanced stats for the chosen team, depending on user input
-    df = LoadData()
+    """displays advanced stats for the chosen team, depending on user input"""
+    df = LoadData() # calls the loadData function to get the correct year and dataframe
 
     team = input("Enter the team name: ")
 
@@ -58,7 +58,7 @@ def AdvancedStats():
     gf_gp = team_data.iloc[0]['GF'] / team_data.iloc[0]['GP'] 
     ga_gp = team_data.iloc[0]['GA'] / team_data.iloc[0]['GP'] 
 
-
+    # Returns the advanced stats as a dataframe
     result_df = pd.DataFrame({
         'Team': [team],
         'PTS/GP': [pts_gp],

@@ -2,7 +2,7 @@ from .skater import Skater
 from .goalie import Goalie
 
 def get_player_stats():
-    
+    """Gets the users input to dtermine which information they would like displayed"""
     while True:
         year = input("Enter the year to search NHL stats (2020, 2021, 2022, 2023, 2024): ")
         if year in ['2020', '2021', '2022', '2023', '2024']:
@@ -40,4 +40,3 @@ def get_player_stats():
         print("Invalid choice. Please choose either 'basic' or 'advanced'.")
 
 
-get_player_stats()

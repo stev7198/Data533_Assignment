@@ -8,7 +8,7 @@ import pkg_resources
 
 
 def TopTeams():
-    #allows the user to choose an NHL season, and show the top scoring teams from that year
+    """allows the user to choose an NHL season, and show the teams with the most points from that year"""
     year = input("Enter the season you would like data for: Please just enter the year the season finished (e.g., 2021/2022 enter 2022)")
 
     csv_filename = f"Team{year}.csv"
@@ -24,12 +24,12 @@ def TopTeams():
     return top_teams
 
 def TopAssists():
-    #allows the user to choose an NHL season, and show the players with most assists from that year
+    """allows the user to choose an NHL season, and show the players with most assists from that year"""
     year = input("Enter the season you would like data for: Please just enter the year the season finished (e.g., 2021/2022 enter 2022)")
 
     csv_filename = f"skaters{year}.csv"
     
-    csv_path = pkg_resources.resource_stream(__name__, f"../player/data/{csv_filename}")
+    csv_path = pkg_resources.resource_stream(__name__, f"../{csv_filename}")
         
     skaterData = pd.read_csv(csv_path)
 
@@ -45,12 +45,12 @@ def TopAssists():
     return top_players
 
 def TopGoals():
-    #allows the user to choose an NHL season, and displays the players with the most goals from that year. 
+    """allows the user to choose an NHL season, and displays the players with the most goals from that year."""
     year = input("Enter the season you would like data for: Please just enter the year the season finished (e.g., 2021/2022 enter 2022)")
 
     csv_filename = f"skaters{year}.csv"
     
-    csv_path = pkg_resources.resource_stream(__name__, f"../player/data/{csv_filename}")
+    csv_path = pkg_resources.resource_stream(__name__, f"../{csv_filename}")
         
     skaterData = pd.read_csv(csv_path)
 
