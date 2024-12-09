@@ -3,7 +3,7 @@
 
 import unittest
 from unittest.mock import patch
-from hockey.player.get_player_stats import get_player_stats  # Ensure correct import path based on your structure
+from hockey.player.get_player_stats import get_player_stats  
 from hockey.player.skater import Skater
 from hockey.player.goalie import Goalie
 
@@ -37,13 +37,10 @@ class TestGetUserInput(unittest.TestCase):
         # Call the function with mocked inputs
         get_player_stats()
 
-        # Check that the correct team (San Jose Sharks) is printed for Evander Kane
-        #mock_print.assert_any_call("Team: S.J")
-        #mock_print.assert_any_call("Position: L")
+        mock_print.assert_any_call("Position: L")
 
         # Assert that player data is not None and matches expected output
-        self.assertIsNotNone(mock_print, "Player data should not be None")
-        #mock_print.assert_any_call("Goals: 26")  
+        self.assertIsNotNone(mock_print, "Player data should not be None")  
     
     @patch('builtins.input')
     @patch('builtins.print')
@@ -55,13 +52,9 @@ class TestGetUserInput(unittest.TestCase):
         # Call the function with mocked inputs
         get_player_stats()
 
-        # Check that advanced goalie stats are printed (adjust based on mock data)
-        #mock_print.assert_any_call("Goalie Advanced Stats for Tristan jarry (Year: 2021)")
-        #mock_print.assert_any_call("Goals Against Average (GAA): 2.75")  
-       # mock_print.assert_any_call("Save Percentage (SV%): 0.909")       
-
-        # Assert that the Goalie data is not None and matches the expected stats
-        #self.assertIsNotNone(mock_print, "Goalie data should not be None")
+        # Check that advanced goalie stats are printed 
+        
+        mock_print.assert_any_call("Save Percentage (SV%): 0.909")       
         mock_print.assert_any_call("Shutouts: 2")  
     
     @patch('builtins.input')
@@ -69,7 +62,6 @@ class TestGetUserInput(unittest.TestCase):
     def test_get_player_stats_invalid_player_type(self, mock_print, mock_input):
         """Test for invalid player type input."""
         # Simulating user inputs with invalid player type
-        #mock_input.side_effect = ['2020', 'defender', 'evander kane', 'basic']
         mock_input.side_effect = ['2020', 'defender']
         # Call the function with mocked inputs
         get_player_stats()

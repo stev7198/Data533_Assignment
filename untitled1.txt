@@ -1,18 +1,0 @@
-import unittest
-from test_get_player_stats import TestGetUserInput
-
-dplayer my_suite():
-    suite = unittest.TestSuite()
-    result = unittest.TestResult()
-    
-    # Add each test case method from the TestGetUserInput class to the suite
-    suite.addTest(TestGetUserInput('test_get_player_stats_skater'))
-    suite.addTest(TestGetUserInput('test_get_player_stats_goalie'))
-    suite.addTest(TestGetUserInput('test_get_player_stats_invalid_year'))
-    suite.addTest(TestGetUserInput('test_get_player_stats_invalid_player_type'))
-    
-    # Run the test suite
-    runner = unittest.TextTestRunner()
-    print(runner.run(suite))
-player Run the suite
-my_suite()
