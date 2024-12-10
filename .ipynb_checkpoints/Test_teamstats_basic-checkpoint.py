@@ -15,6 +15,9 @@ class TestBasic(unittest.TestCase):
     
     def setUp(self): 
         print('Set Up')
+        self.basic_stats_test = ['2022', 'Seattle Kraken', 'W']
+        self.basic_stats_test_2 = ['2022', 'Seattle Kraken', 'L']
+        self.advanced_stats_test = ['2022', 'Montreal Canadiens']
         
     def tearDown(self):
         print('Tear Down')
@@ -28,21 +31,31 @@ class TestBasic(unittest.TestCase):
         """Test BasicStats"""
 
         # Mock the user input for year, team, and stat
-        mock_input.side_effect = ['2022', 'Seattle Kraken', 'W']
+        mock_input.side_effect = self.basic_stats_test
 
         # Call the BasicStats function
         stat_value = basic.BasicStats()
 
         # Perform assertions
         self.assertIsNotNone(stat_value, "Stat value should not be None")
-        self.assertEqual(stat_value, 27, "The W stat for TeamA should be 27")
+        self.assertEqual(stat_value, 27, "The W stat should be 27")
+
+        # Mock the user input for year, team, and stat
+        mock_input.side_effect = self.basic_stats_test_2
+        
+        # Call the BasicStats function
+        stat_value = basic.BasicStats()
+
+        # Perform assertions
+        self.assertIsNotNone(stat_value, "Stat value should not be None")
+        self.assertEqual(stat_value, 49, "The L stat should be 49")
 
     @patch('hockey.teamstats.basic.input')
     def test_AdvancedStats(self, mock_input):
         """Test AdvancedStats"""
 
         # Mock the user input for year, team
-        mock_input.side_effect = ['2022', 'Montreal Canadiens']
+        mock_input.side_effect = self.advanced_stats_test
 
         # Call the AdvancedStats function
         stat_df = basic.AdvancedStats()
