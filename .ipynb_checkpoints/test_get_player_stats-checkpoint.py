@@ -38,6 +38,7 @@ class TestGetUserInput(unittest.TestCase):
         get_player_stats()
 
         mock_print.assert_any_call("Position: L")
+        mock_print.assert_any_call("Team: S.J")
 
         # Assert that player data is not None and matches expected output
         self.assertIsNotNone(mock_print, "Player data should not be None")  

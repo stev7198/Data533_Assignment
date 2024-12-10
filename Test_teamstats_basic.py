@@ -3,7 +3,6 @@
 
 # In[24]:
 
-
 import unittest
 from unittest.mock import patch
 import hockey.teamstats.basic as basic
@@ -74,7 +73,3 @@ unittest.main(argv=[''], verbosity=2, exit=False)
 
 
 # In[ ]:
-
-
-
-
