@@ -2,6 +2,10 @@ import unittest
 
 from Test_teamstats_basic import TestBasic
 from Test_teamstats_toplists import TestToplists
+from test_get_player_stats import TestGetUserInput
+from test_player import TestPlayer 
+from test_skater import TestSkater
+from test_goalie import TestGoalie
 
 #testing for the Teamstats subpackage 
 
@@ -13,20 +17,6 @@ def my_suite():
     suite.addTest(TestToplists('test_TopTeams'))
     suite.addTest(TestToplists('test_TopAssists'))
     suite.addTest(TestToplists('test_TopGoals'))
-    runner = unittest.TextTestRunner()
-    print(runner.run(suite))
-my_suite()
-
-from test_get_player_stats import TestGetUserInput
-from test_player import TestPlayer 
-from test_skater import TestSkater
-from test_goalie import TestGoalie
-
-#testing for the player subpackage
-
-def player_suite():
-    suite = unittest.TestSuite()
-    
     # Add each test case method from the TestGetUserInput class to the suite
     suite.addTest(TestGetUserInput('test_get_player_stats_skater'))
     suite.addTest(TestGetUserInput('test_get_player_stats_goalie'))
@@ -53,11 +43,7 @@ def player_suite():
     suite.addTest(TestGoalie('test_basic_stats_not_found'))
     suite.addTest(TestGoalie('test_advanced_stats_found'))
     suite.addTest(TestGoalie('test_advanced_stats_not_found'))
-    
-    # Run the test suite
-    runner = unittest.TextTestRunner(verbosity=2)  # verbosity=2 gives more detailed output
-    result = runner.run(suite)
+    runner = unittest.TextTestRunner()
+    print(runner.run(suite))
+my_suite()
 
-# Run the suite
-if __name__ == '__main__':
-    player_suite()
