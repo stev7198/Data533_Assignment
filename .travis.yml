@@ -3,5 +3,8 @@ python:
 - "3.6"
 - "3.7"
 - "3.8"
+install:
+  - pip install --upgrade pip
+  - pip install pandas numpy 
 script:
 - python TestSuite.py
