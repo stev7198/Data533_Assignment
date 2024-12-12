@@ -8,7 +8,7 @@ from unittest.mock import patch
 import sys
 import os
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '/src')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
 import hockey.teamstats.basic as basic 
 
@@ -66,7 +66,7 @@ class TestBasic(unittest.TestCase):
 
         # Perform assertions
         self.assertIsNotNone(stat_df, "Stat value should not be None")
-        self.assertTrue('Montreal Canadiens' in stat_df['Team'].values, "Team should be Montreal Canadiens")
+        self.assertTrue('montreal canadiens' in stat_df['Team'].values, "Team should be Montreal Canadiens")
         self.assertAlmostEqual(stat_df['PTS/GP'].iloc[0], 0.6707, places=4,
                                msg="PTS/GP should be correctly calculated")
         self.assertAlmostEqual(stat_df['GF/GP'].iloc[0], 2.6951, places=4,

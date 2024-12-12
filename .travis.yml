@@ -5,6 +5,6 @@ python:
 - "3.8"
 install:
   - pip install --upgrade pip
-  - pip install pandas numpy 
+  - pip install pandas numpy
 script:
-- python TestSuite.py
+- python tests/TestSuite.py
