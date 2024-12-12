@@ -32,3 +32,8 @@ Additionally, there will be two subpackages:
 1. load_data - Loads and return the correct data for the given year - calls from player parent class
 2. basic_stats - Allows the user to retrieve basic stats for a goalie in the chosen year (team, wins, games played, save percentage)
 3. advanced_stats - Allows the user to retrieve advanced stats for a goalie in the chosen year (goals against average, shutouts, total number of saves)
+
+
+
+***TravisCI Badge***
+[![Build Status](https://app.travis-ci.com/stev7198/Data533_Assignment.svg?token=2jTmhrmhivmbSbeqqtUe&branch=main)](https://app.travis-ci.com/stev7198/Data533_Assignment)
