@@ -1,3 +1,15 @@
+Metadata-Version: 2.1
+Name: HockeyPackage
+Version: 0.0.1
+Summary: A package for hockey stats
+Author: Tyler Stevenson, Foster Lockerbie
+Project-URL: Homepage, https://github.com/stev7198/Data533_Assignment
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
 # Data533_Assignment Hockey Package
 
 We will create a database system to manage data from the last five NHL seasons. The main package will contain three types of databases:
@@ -37,6 +49,3 @@ Additionally, there will be two subpackages:
 
 ***TravisCI Badge***
 [![Build Status](https://app.travis-ci.com/stev7198/Data533_Assignment.svg?token=2jTmhrmhivmbSbeqqtUe&branch=main)](https://app.travis-ci.com/stev7198/Data533_Assignment)
-
-***PyPi Package Link***
-https://pypi.org/project/HockeyPackage/0.0.1/
